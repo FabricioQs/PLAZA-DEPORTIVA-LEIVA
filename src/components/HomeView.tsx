@@ -92,7 +92,6 @@ export default function HomeView({ tournaments, teams, matches, onNavigate }: Ho
               transition={{ delay: 0.2 }}
               className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/10 border border-brand-green/30 text-brand-green text-xs font-semibold uppercase tracking-wider"
             >
-              <Sparkles className="w-4 h-4 animate-pulse" />
               Sinfonía del Fútbol Local de Alta Calidad
             </motion.div>
 
