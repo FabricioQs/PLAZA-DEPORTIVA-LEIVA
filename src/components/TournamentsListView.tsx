@@ -12,12 +12,14 @@ interface TournamentsListViewProps {
   tournaments: Tournament[];
   onSelectTournament: (id: string) => void;
   onCreateTournamentClick: () => void;
+  isAdmin?: boolean;
 }
 
 export default function TournamentsListView({
   tournaments,
   onSelectTournament,
   onCreateTournamentClick,
+  isAdmin = false,
 }: TournamentsListViewProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<TournamentCategory | 'Todas'>('Todas');
@@ -45,13 +47,15 @@ export default function TournamentsListView({
             Explora las tablas, goleadores, fixture de partidos y estadísticas por categoría.
           </p>
         </div>
-        <button
-          id="btn-tournaments-create-new"
-          onClick={onCreateTournamentClick}
-          className="px-5 py-3 rounded-xl bg-brand-green hover:bg-brand-green-dark text-black font-bold flex items-center gap-2 shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer shrink-0 text-sm"
-        >
-          <Plus className="w-4.5 h-4.5" /> Crear Torneo
-        </button>
+        {isAdmin && (
+          <button
+            id="btn-tournaments-create-new"
+            onClick={onCreateTournamentClick}
+            className="px-5 py-3 rounded-xl bg-brand-green hover:bg-brand-green-dark text-black font-bold flex items-center gap-2 shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer shrink-0 text-sm"
+          >
+            <Plus className="w-4.5 h-4.5" /> Crear Torneo
+          </button>
+        )}
       </div>
 
       {/* FILTER CONTROLS TOOLBAR */}
@@ -160,21 +164,23 @@ export default function TournamentsListView({
         ))}
 
         {/* CREATE CARD CTA */}
-        <motion.div
-          whileHover={{ y: -4 }}
-          onClick={onCreateTournamentClick}
-          className="rounded-2xl border border-dashed border-zinc-800 hover:border-brand-green/50 hover:bg-brand-green/3 bg-zinc-950/20 p-6 flex flex-col items-center justify-center text-center space-y-4 cursor-pointer group min-h-[220px]"
-        >
-          <div className="p-3.5 rounded-full bg-zinc-900 border border-zinc-800 text-brand-green group-hover:bg-brand-green group-hover:text-black transition-colors">
-            <Plus className="w-6 h-6" />
-          </div>
-          <div>
-            <h3 className="text-lg font-display font-bold text-white">¿No encuentras tu torneo?</h3>
-            <p className="text-xs text-zinc-500 mt-1 max-w-[280px]">
-              Crea tu propia liga o campeonato de fútbol, administra equipos y sube resultados.
-            </p>
-          </div>
-        </motion.div>
+        {isAdmin && (
+          <motion.div
+            whileHover={{ y: -4 }}
+            onClick={onCreateTournamentClick}
+            className="rounded-2xl border border-dashed border-zinc-800 hover:border-brand-green/50 hover:bg-brand-green/3 bg-zinc-950/20 p-6 flex flex-col items-center justify-center text-center space-y-4 cursor-pointer group min-h-[220px]"
+          >
+            <div className="p-3.5 rounded-full bg-zinc-900 border border-zinc-800 text-brand-green group-hover:bg-brand-green group-hover:text-black transition-colors">
+              <Plus className="w-6 h-6" />
+            </div>
+            <div>
+              <h3 className="text-lg font-display font-bold text-white">¿No encuentras tu torneo?</h3>
+              <p className="text-xs text-zinc-500 mt-1 max-w-[280px]">
+                Crea tu propia liga o campeonato de fútbol, administra equipos y sube resultados.
+              </p>
+            </div>
+          </motion.div>
+        )}
       </div>
 
       {filteredTournaments.length === 0 && (

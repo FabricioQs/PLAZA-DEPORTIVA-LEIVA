@@ -205,6 +205,40 @@
   color: #059669 !important; /* Rich green for best contrast on white/light bg */
 }
 
+/* Precise style overrides for Hero and Featured Tournament Cards in Light Theme */
+.theme-light .hero-section-card {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 20px -2px rgba(0,0,0,0.06) !important;
+}
+
+.theme-light .hero-section-card h1 {
+  color: #000000 !important;
+}
+
+.theme-light .hero-section-card p {
+  color: #000000 !important;
+}
+
+.theme-light .featured-tournament-card {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.03), 0 2px 4px -1px rgba(0,0,0,0.02) !important;
+}
+
+.theme-light .featured-tournament-card h3 {
+  color: #000000 !important;
+}
+
+.theme-light .featured-tournament-card p {
+  color: #475569 !important;
+}
+
+.theme-light .featured-tournament-card span.capitalize {
+  color: #475569 !important;
+}
+
 /* ==========================================================================
    WEB ACCESSIBILITY: HIGH CONTRAST THEME OVERRIDES
    ========================================================================== */

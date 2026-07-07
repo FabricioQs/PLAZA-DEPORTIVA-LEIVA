@@ -63,7 +63,7 @@ export default function HomeView({ tournaments, teams, matches, onNavigate }: Ho
   return (
     <div className="space-y-12 pb-16">
       {/* HERO SECTION */}
-      <section className="relative overflow-hidden rounded-3xl bg-[#141414] border border-zinc-800/80 p-8 md:p-16 sports-grid">
+      <section className="hero-section-card relative overflow-hidden rounded-3xl bg-[#141414] border border-zinc-800/80 p-8 md:p-16 sports-grid">
         {/* Decorative elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-green/10 rounded-full blur-3xl -z-10" />
         <div className="absolute -bottom-10 -left-10 w-96 h-96 bg-brand-green-dark/10 rounded-full blur-3xl -z-10" />
@@ -123,7 +123,7 @@ export default function HomeView({ tournaments, teams, matches, onNavigate }: Ho
               <button
                 id="btn-hero-explore-tournaments"
                 onClick={() => onNavigate('tournaments')}
-                className="px-8 py-4 rounded-xl bg-brand-green hover:bg-brand-green-dark text-black font-semibold shadow-lg shadow-brand-green/20 hover:shadow-brand-green-dark/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
+                className="px-8 py-4 rounded-xl bg-brand-green hover:bg-brand-green-dark text-white font-bold shadow-lg shadow-brand-green/20 hover:shadow-brand-green-dark/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 cursor-pointer"
               >
                 Explorar Torneos Activos
                 <ChevronRight className="w-5 h-5" />
@@ -331,7 +331,7 @@ export default function HomeView({ tournaments, teams, matches, onNavigate }: Ho
               <motion.div
                 key={tournament.id}
                 whileHover={{ y: -3 }}
-                className="p-5 rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 hover:border-brand-green/30 transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between"
+                className="featured-tournament-card p-5 rounded-2xl bg-gradient-to-br from-zinc-900 to-zinc-950 border border-zinc-800 hover:border-brand-green/30 transition-all cursor-pointer relative overflow-hidden flex flex-col justify-between"
                 onClick={() => onNavigate('tournaments', { tournamentId: tournament.id })}
               >
                 {/* Visual marker of active status */}

@@ -258,6 +258,7 @@ export default function App() {
                   tournaments={state.tournaments}
                   onSelectTournament={(id) => setSelectedTournamentId(id)}
                   onCreateTournamentClick={() => setCurrentTab('admin')}
+                  isAdmin={isAdminLogged}
                 />
               )
             )}
@@ -348,23 +349,23 @@ export default function App() {
                 {isAdminLogged ? '🔓 Consola Activa' : '🔐 Acceso Admin'}
               </button>
             </div>
-            <div className="flex items-center gap-2">
-              <span className="text-zinc-600">Desarrollado por:</span>
+             <div className="flex items-center gap-2.5">
+              <span className="text-zinc-500 text-xs sm:text-sm">Desarrollado por:</span>
               <a
-                href="https://fabritekhx.com"
+                href="https://linktr.ee/FABRITEKHX"
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-1.5 font-bold text-zinc-400 hover:text-brand-green transition-colors"
+                className="flex items-center gap-2 font-black text-white hover:text-brand-green transition-colors py-1 px-2.5 rounded-lg bg-zinc-900/40 border border-zinc-800/50 hover:border-brand-green/30"
                 id="fabritekhx-footer-link"
               >
                 <img
                   src="https://cnikfcehhfvgnpzpwotm.supabase.co/storage/v1/object/sign/IMAGENES/LOGO/LOGO.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9iMDFjN2VjYi05ZjEzLTQ2ZmUtYTk3OS1mZDRlNGYwMWZjYTciLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJJTUFHRU5FUy9MT0dPL0xPR08ucG5nIiwic2NvcGUiOiJkb3dubG9hZCIsImlhdCI6MTc4MzM5OTAxNiwiZXhwIjoyMDk4NzU5MDE2fQ.WqOi2iutNMDzrfStTMiNh0qd5-u-GC1cpKL0mNrXjuw"
                   alt="FABRITEKHX Logo"
-                  className="w-5 h-5 object-contain"
+                  className="w-6 h-6 object-contain"
                   referrerPolicy="no-referrer"
                   id="fabritekhx-logo-img"
                 />
-                <span className="font-display tracking-wider text-xs">FABRITEKHX</span>
+                <span className="font-display tracking-wider text-sm sm:text-base">FABRITEKHX</span>
               </a>
             </div>
           </div>
