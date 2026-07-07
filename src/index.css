@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Oswald", sans-serif;
+  
+  --color-brand-green: #4CAF50;
+  --color-brand-green-dark: #3D8B40;
+  --color-brand-charcoal: #1A1A1A;
+  --color-brand-gray: #2B2B2B;
+  --color-brand-gold: #F5C518;
+}
+
+:root {
+  /* Default/Dark theme colors (PURE BLACK FOR PLAZA DEPORTIVA LEIVA) */
+  --color-bg-primary: #000000;
+  --color-bg-card: #0a0a0c;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #94a3b8;
+  
+  --color-accent: #10b981;
+  --color-accent-hover: #059669;
+  --color-accent-active: #047857;
+  
+  --color-border: #141416;
+  
+  --transition-speed: 0.3s;
+}
+
+/* If explicit light class is applied */
+.theme-light {
+  --color-bg-primary: #f8fafc;
+  --color-bg-card: #ffffff;
+  
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  
+  --color-accent: #10b981;
+  --color-accent-hover: #059669;
+  --color-accent-active: #047857;
+  
+  --color-border: #e2e8f0;
+}
+
+/* Custom scrollbars and styling tweaks */
+@layer base {
+  body {
+    @apply font-sans antialiased selection:bg-brand-green selection:text-white;
+    background-color: var(--color-bg-primary) !important;
+    color: var(--color-text-primary) !important;
+    transition: background-color var(--transition-speed) ease, 
+                color var(--transition-speed) ease;
+  }
+}
+
+.sports-grid {
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, rgba(255,255,255,0.01) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255,255,255,0.01) 1px, transparent 1px);
+}
+
+/* ==========================================================================
+   WEB ACCESSIBILITY: LIGHT THEME OVERRIDES
+   ========================================================================== */
+.theme-light {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.theme-light body {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+}
+
+.theme-light .sports-grid {
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.02) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
+}
+
+/* Overwrite ALL possible dark background classes and gradients in light mode */
+.theme-light .bg-zinc-950,
+.theme-light .bg-zinc-900,
+.theme-light .bg-\[\#0c0c0c\],
+.theme-light .bg-\[\#121212\],
+.theme-light .bg-black,
+.theme-light .bg-zinc-850,
+.theme-light .bg-zinc-900\/80,
+.theme-light .bg-zinc-900\/60,
+.theme-light .bg-zinc-900\/50,
+.theme-light .bg-zinc-900\/40,
+.theme-light .bg-zinc-950\/20,
+.theme-light .bg-zinc-950\/80,
+.theme-light .bg-black\/40,
+.theme-light .bg-black\/60,
+.theme-light .bg-black\/80,
+.theme-light .bg-gradient-to-b,
+.theme-light .bg-gradient-to-r,
+.theme-light .bg-gradient-to-t {
+  background-color: #ffffff !important;
+  background-image: none !important;
+  color: #0f172a !important;
+}
+
+/* Light gray elements */
+.theme-light .bg-zinc-900\/10,
+.theme-light .bg-zinc-950\/5 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Specific button styles */
+.theme-light .bg-zinc-800 {
+  background-color: #f1f5f9 !important;
+  color: #0f172a !important;
+}
+
+/* Selected states or high contrast backgrounds */
+.theme-light .hover\:bg-zinc-800:hover,
+.theme-light .hover\:bg-zinc-900:hover,
+.theme-light .hover\:bg-zinc-700:hover {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Active or highlighted sports elements */
+.theme-light .bg-brand-green\/10,
+.theme-light .bg-brand-green\/20 {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border-color: #a7f3d0 !important;
+}
+
+.theme-light .bg-brand-green\/5 {
+  background-color: #f0fdf4 !important;
+  color: #166534 !important;
+}
+
+.theme-light .bg-blue-500\/10 {
+  background-color: #eff6ff !important;
+  color: #1d4ed8 !important;
+  border-color: #bfdbfe !important;
+}
+
+/* Live match container light styling - highly readable soft red */
+.theme-light .bg-\[\#1b1010\]\/80,
+.theme-light .bg-\[\#140b0b\]\/60 {
+  background-color: #fff5f5 !important;
+  background-image: none !important;
+  border-color: #fca5a5 !important;
+  color: #991b1b !important;
+}
+
+.theme-light .text-red-400 {
+  color: #dc2626 !important;
+}
+
+/* Text color fixes - turn white text to slate text */
+.theme-light .text-white,
+.theme-light .text-zinc-50,
+.theme-light .text-zinc-100,
+.theme-light .text-zinc-200,
+.theme-light .text-zinc-300,
+.theme-light .text-zinc-400,
+.theme-light h2.text-white,
+.theme-light h3.text-white,
+.theme-light h4.text-white {
+  color: #0f172a !important;
+}
+
+.theme-light .text-zinc-500,
+.theme-light .text-zinc-600 {
+  color: #64748b !important;
+}
+
+/* Border overrides */
+.theme-light .border-zinc-800,
+.theme-light .border-zinc-800\/60,
+.theme-light .border-zinc-800\/80,
+.theme-light .border-zinc-900,
+.theme-light .border-zinc-700,
+.theme-light .border-zinc-700\/60 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Custom inputs, select boxes, and textareas */
+.theme-light input,
+.theme-light select,
+.theme-light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light input::placeholder {
+  color: #94a3b8 !important;
+}
+
+.theme-light button:not(.bg-brand-green):not(.text-black) {
+  border-color: #cbd5e1 !important;
+}
+
+.theme-light .text-brand-green {
+  color: #059669 !important; /* Rich green for best contrast on white/light bg */
+}
+
+/* ==========================================================================
+   WEB ACCESSIBILITY: HIGH CONTRAST THEME OVERRIDES
+   ========================================================================== */
+.theme-contrast {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.theme-contrast body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.theme-contrast .bg-zinc-950,
+.theme-contrast .bg-zinc-900,
+.theme-contrast .bg-black,
+.theme-contrast .bg-[#0c0c0c],
+.theme-contrast .bg-zinc-900\/50,
+.theme-contrast .bg-zinc-900\/80 {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+.theme-contrast .text-white,
+.theme-contrast .text-zinc-100,
+.theme-contrast .text-zinc-200,
+.theme-contrast .text-zinc-300,
+.theme-contrast .text-zinc-400,
+.theme-contrast .text-zinc-500,
+.theme-contrast .text-zinc-600 {
+  color: #ffffff !important;
+}
+
+.theme-contrast .border-zinc-800,
+.theme-contrast .border-zinc-800\/80,
+.theme-contrast .border-zinc-900,
+.theme-contrast .border-zinc-700 {
+  border-color: #ffffff !important;
+}
+
+.theme-contrast input,
+.theme-contrast select,
+.theme-contrast textarea {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border: 2px solid #ffffff !important;
+}
+
+.theme-contrast button {
+  border: 2px solid #ffffff !important;
+}
+
+

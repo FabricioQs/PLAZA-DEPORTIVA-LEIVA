@@ -1,0 +1,6 @@
+{
+  "name": "Plaza Deportiva Leiva",
+  "description": "Plataforma web para la gestión y visualización de torneos de fútbol e indor con estadísticas, posiciones y fixture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
